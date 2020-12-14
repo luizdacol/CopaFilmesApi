@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Domain;
+using CopaFilmes.Api.Domain;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 
-namespace Infra.Repository
+namespace CopaFilmes.Api.Infra.Repository
 {
     public class FilmesRepository : IFilmesRepository
     {

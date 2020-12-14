@@ -1,4 +1,4 @@
-namespace Domain
+namespace CopaFilmes.Api.Domain
 {
     public class Filme
     {

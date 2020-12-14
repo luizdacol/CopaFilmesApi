@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Domain;
-using Infra.Repository;
+using CopaFilmes.Api.Domain;
+using CopaFilmes.Api.Infra.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Views;
+using CopaFilmes.Api.Views;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 
-namespace Controllers
+namespace CopaFilmes.Api.Controllers
 {
     [Route("competicao")]
     public class CompeticaoController : ControllerBase

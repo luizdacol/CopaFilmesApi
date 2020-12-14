@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Domain;
+using CopaFilmes.Api.Domain;
 
-namespace Infra.Repository
+namespace CopaFilmes.Api.Infra.Repository
 {
     public interface IFilmesRepository
     {

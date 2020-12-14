@@ -1,4 +1,4 @@
-namespace Views
+namespace CopaFilmes.Api.Views
 {
     public class FilmeView
     {
