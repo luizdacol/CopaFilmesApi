@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Infra.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,14 @@ namespace CopaFilmes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHealthChecks();
+            services.AddHttpClient("FilmesApi", c =>
+            {
+                c.Timeout = new TimeSpan(0, 0, this.Configuration.GetValue<int>("FilmesApi:TimeoutEmSegundos"));
+                c.BaseAddress = new Uri(this.Configuration.GetValue<string>("FilmesApi:UrlBase"));
+            });
+
+            services.AddSingleton<IFilmesRepository, FilmesRepository>();
+
             services.AddControllers();
         }
 
