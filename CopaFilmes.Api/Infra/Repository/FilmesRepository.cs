@@ -19,7 +19,7 @@ namespace CopaFilmes.Api.Infra.Repository
             this._logger = logger;
         }
 
-        public async Task<IEnumerable<Filme>> ObterFilmes()
+        public async Task<IEnumerable<Filme>> ObterFilmesAsync()
         {
             using (HttpClient httpClient = _httpClientFactory.CreateClient("FilmesApi"))
             {

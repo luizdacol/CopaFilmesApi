@@ -6,6 +6,6 @@ namespace CopaFilmes.Api.Infra.Repository
 {
     public interface IFilmesRepository
     {
-        Task<IEnumerable<Filme>> ObterFilmes();
+        Task<IEnumerable<Filme>> ObterFilmesAsync();
     }
 }
