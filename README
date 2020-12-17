@@ -1,3 +1,5 @@
+Este projeto foi desenvolvido com .net core 3.1
+
 Para executar a aplicação, execute o comando abaixo no diretorio do arquivo CopaFilmes.sln
 
     1. dotnet run --project ./CopaFilmes.Api/CopaFilmes.Api.csproj 
