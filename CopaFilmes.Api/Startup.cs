@@ -35,6 +35,12 @@ namespace CopaFilmes.Api
 
             services.AddSingleton<IFilmesRepository, FilmesRepository>();
 
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+                c.AddPolicy("AllowHeader", options => options.AllowAnyHeader());
+                c.AddPolicy("AllowMethod", options => options.AllowAnyMethod());
+            });
             services.AddControllers();
         }
 
@@ -48,6 +54,12 @@ namespace CopaFilmes.Api
 
             app.UseHealthChecks("/healthCheck");
             app.UseRouting();
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin();
+                options.AllowAnyHeader();
+                options.AllowAnyMethod();
+            });
 
             app.UseEndpoints(endpoints =>
             {
