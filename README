@@ -1,0 +1,39 @@
+Para executar a aplicação, execute o comando abaixo no diretorio do arquivo CopaFilmes.sln
+
+    1. dotnet run --project ./CopaFilmes.Api/CopaFilmes.Api.csproj 
+
+    A aplicação subirá no endereço http://localhost:5000 com o environment Development
+
+
+Para executar os testes, execute o comando abaixo no diretorio do arquivo CopaFilmes.sln
+
+    1. dotnet test --logger "console;verbosity=detailed"
+
+    Os testes serão executados e será logado no console com alguns detalhes das execuções
+
+Documentação
+
+A api possui duas rotas:
+
+    GET /competicao/filmes
+        Esse endpoint retorna uma lista de filmes disponiveis para o usuario escolher.
+        O retorno desse endpoint segue a estrutura abaixo
+        
+        [
+            {
+                id: "string"
+                titulo: "string"
+                ano: 0
+            }
+        ]
+
+
+    POST /competicao/filmes
+        Esse endpoint recebe uma lista de id's dos filmes escolhidos para fazer parte da competição e retorna o Campeão e o Vice Campeão definidos a partir de alguns criterios
+        Esse endpoint recebe uma lista de string no corpo da requisição
+        O retorno desse endpoint segue a estrutura abaixo
+
+        {
+            campeao: "string",
+            viceCampeao: "string"
+        }
